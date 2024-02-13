@@ -23,7 +23,11 @@ export default function UpdateUser() {
   const Update = (e) => {
     e.preventDefault();
     axios
-      .put(`https://rmutlnewproject.vercel.app/${id}`, { name, email, age }) // Send data to update
+      .put(`https://rmutlnewproject.vercel.app/updateUser/${id}`, {
+        name,
+        email,
+        age,
+      }) // Send data to update
       .then((result) => {
         console.log(result);
         navigate("/");
