@@ -11,7 +11,7 @@ export default function UpdateUser() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3002/getUser/${id}`) // Use template literals to insert id
+      .get(`https://rmutlnewproject.vercel.app/getUser/${id}`) // Use template literals to insert id
       .then((result) => {
         setName(result.data.name);
         setEmail(result.data.email);
