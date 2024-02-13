@@ -5,8 +5,11 @@ import { useNavigate } from "react-router-dom";
 
 function CreateUser() {
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [age, setAge] = useState("");
+  const [volume, setVolume] = useState("");
+  const [price, setPrice] = useState("");
+  const [dad, setDad] = useState("");
+  const [mon, setMon] = useState("");
+  const [score, setScore] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -14,8 +17,11 @@ function CreateUser() {
     axios
       .post("https://rmutlnewproject.vercel.app/createUser", {
         name,
-        email,
-        age,
+        price,
+        volume,
+        mon,
+        dad,
+        score,
       })
       .then((result) => {
         console.log(result);
@@ -28,33 +34,63 @@ function CreateUser() {
     <form onSubmit={handleSubmit}>
       <h2>Add User</h2>
       <div className="form-group">
-        <label htmlFor="name">Name</label>
+        <label htmlFor="name">ชื่อวัว</label>
         <input
           type="text"
           className="form-control"
           id="name"
-          placeholder="Enter Name"
+          placeholder="กรอกชื่อวัว"
           onChange={(e) => setName(e.target.value)}
         />
       </div>
       <div className="form-group">
-        <label htmlFor="email">Email</label>
+        <label htmlFor="price">ราคา</label>
         <input
-          type="email"
+          type="text"
           className="form-control"
-          id="email"
-          placeholder="Enter email"
-          onChange={(e) => setEmail(e.target.value)}
+          id="price"
+          placeholder="กรุณา กรอกราคา"
+          onChange={(e) => setPrice(e.target.value)}
         />
       </div>
       <div className="form-group">
-        <label htmlFor="age">Age</label>
+        <label htmlFor="age">จำนวนที่ซื้อ</label>
         <input
-          type="number"
+          type="text"
           className="form-control"
-          id="age"
+          id="volume"
           placeholder="Enter Age"
-          onChange={(e) => setAge(e.target.value)}
+          onChange={(e) => setVolume(e.target.value)}
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="age">ชื่อแม่วัว</label>
+        <input
+          type="text"
+          className="form-control"
+          id="mon"
+          placeholder="ชื่อแม่วัว"
+          onChange={(e) => setMon(e.target.value)}
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="age">ชื่อพ่อวัว</label>
+        <input
+          type="text"
+          className="form-control"
+          id="dad"
+          placeholder="ชื่อพ่อวัว"
+          onChange={(e) => setDad(e.target.value)}
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="age">คะแนนรีวิว</label>
+        <input
+          type="text"
+          className="form-control"
+          id="score"
+          placeholder="คะแนนรีวิว"
+          onChange={(e) => setScore(e.target.value)}
         />
       </div>
       <button type="submit" className="btn btn-success">

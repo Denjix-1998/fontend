@@ -28,22 +28,27 @@ export default function Users() {
       <table className="table table-bordered">
         <thead>
           <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Age</th>
-            <th scope="col">Action</th>
+            <th scope="col">ชื่อวัว</th>
+            <th scope="col">ชื่อแม่วัว</th>
+            <th scope="col">ราคา</th>
+            <th scope="col">จำนวนการซื้อ</th>
           </tr>
         </thead>
         <tbody>
           {users.map((user) => (
             <tr>
               <td>{user.name}</td>
-              <td>{user.email}</td>
-              <td>{user.age}</td>
+              <td>{user.mon}</td>
+              <td>{user.price}</td>
+              <td>{user.score}</td>
               <td>
+                <Link to={`detail/${user._id}`} className="btn btn-primary">
+                  Detail
+                </Link>
                 <Link to={`update/${user._id}`} className="btn btn-success">
                   Update
                 </Link>
+
                 <button
                   type="button"
                   className="btn btn-danger"

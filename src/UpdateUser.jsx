@@ -5,8 +5,11 @@ import axios from "axios"; // Import axios
 export default function UpdateUser() {
   const { id } = useParams();
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [age, setAge] = useState("");
+  const [volume, setVolume] = useState("");
+  const [price, setPrice] = useState("");
+  const [dad, setDad] = useState("");
+  const [mon, setMon] = useState("");
+  const [score, setScore] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -14,8 +17,11 @@ export default function UpdateUser() {
       .get(`https://rmutlnewproject.vercel.app/getUser/${id}`) // Use template literals to insert id
       .then((result) => {
         setName(result.data.name);
-        setEmail(result.data.email);
-        setAge(result.data.age);
+        setVolume(result.data.volume);
+        setPrice(result.data.price);
+        setMon(result.data.mon);
+        setDad(result.data.dad);
+        setScore(result.data.score);
       })
       .catch((err) => console.log(err));
   }, [id]); // Add id as a dependency
@@ -25,8 +31,11 @@ export default function UpdateUser() {
     axios
       .put(`https://rmutlnewproject.vercel.app/updateUser/${id}`, {
         name,
-        email,
-        age,
+        price,
+        volume,
+        mon,
+        dad,
+        score,
       }) // Send data to update
       .then((result) => {
         console.log(result);
@@ -38,37 +47,73 @@ export default function UpdateUser() {
     <form onSubmit={Update}>
       <h2>Update User</h2>
       <div className="form-group">
-        <label>Name</label>
+        <label htmlFor="name">ชื่อวัว</label>
         <input
           type="text"
           className="form-control"
+          id="name"
+          placeholder="กรอกชื่อวัว"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          placeholder="Enter Name"
         />
       </div>
       <div className="form-group">
-        <label>Email</label>
+        <label htmlFor="price">ราคา</label>
         <input
-          type="email"
+          type="text"
           className="form-control"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Enter email"
+          id="price"
+          placeholder="กรุณา กรอกราคา"
+          value={price}
+          onChange={(e) => setPrice(e.target.value)}
         />
       </div>
       <div className="form-group">
-        <label>Age</label>
+        <label htmlFor="age">จำนวนที่ซื้อ</label>
         <input
-          type="number"
+          type="text"
           className="form-control"
-          value={age}
-          onChange={(e) => setAge(e.target.value)}
+          id="volume"
           placeholder="Enter Age"
+          value={volume}
+          onChange={(e) => setVolume(e.target.value)}
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="age">ชื่อแม่วัว</label>
+        <input
+          type="text"
+          className="form-control"
+          id="mon"
+          value={mon}
+          placeholder="ชื่อแม่วัว"
+          onChange={(e) => setMon(e.target.value)}
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="age">ชื่อพ่อวัว</label>
+        <input
+          type="text"
+          className="form-control"
+          id="dad"
+          placeholder="ชื่อพ่อวัว"
+          value={dad}
+          onChange={(e) => setDad(e.target.value)}
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="age">คะแนนรีวิว</label>
+        <input
+          type="text"
+          className="form-control"
+          id="score"
+          placeholder="คะแนนรีวิว"
+          value={score}
+          onChange={(e) => setScore(e.target.value)}
         />
       </div>
       <button type="submit" className="btn btn-success">
-        Submit
+        Update
       </button>
     </form>
   );

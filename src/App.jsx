@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Users from "./Users";
 import CreateUser from "./CreateUser";
 import UpdateUser from "./UpdateUser";
+import DetailUser from "./detailUser";
 function App() {
   return (
     <>
@@ -13,6 +14,7 @@ function App() {
             <Route path="/" element={<Users />}></Route>
             <Route path="/create" element={<CreateUser />}></Route>
             <Route path="/update/:id" element={<UpdateUser />}></Route>
+            <Route path="/detail/:id" element={<DetailUser />}></Route>
           </Routes>
         </BrowserRouter>
       </div>
