@@ -12,7 +12,7 @@ function CreateUser() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://rmutlnewproject.vercel.app/", {
+      .post("https://rmutlnewproject.vercel.app/createUser", {
         name,
         email,
         age,
