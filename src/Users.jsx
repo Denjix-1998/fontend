@@ -32,6 +32,7 @@ export default function Users() {
             <th scope="col">ชื่อแม่วัว</th>
             <th scope="col">ราคา</th>
             <th scope="col">จำนวนการซื้อ</th>
+            <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
