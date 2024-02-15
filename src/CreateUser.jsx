@@ -59,7 +59,7 @@ function CreateUser() {
           type="text"
           className="form-control"
           id="volume"
-          placeholder="Enter Age"
+          placeholder="จำนวนการที่ซื้อ"
           onChange={(e) => setVolume(e.target.value)}
         />
       </div>
