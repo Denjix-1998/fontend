@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios"; // Import axios
 
+import "./DetailUser.css"; // Import CSS file for farm theme
+
 export default function DetailUser() {
   const { id } = useParams();
   const [name, setName] = useState("");
@@ -39,20 +41,27 @@ export default function DetailUser() {
       .catch((err) => console.log(err));
   }, [id]);
   return (
-    <div>
-      <h1>ชื่อวัว: {name}</h1>
-      <h1>สายพันธุ์ : {specie}</h1>
-      <h1>อายุ :{age}</h1>
-      <h1>น้ำหนัก :{weight}</h1>
-      <h1>ชื่อแม่วัว : {mon}</h1>
-      <h1>ชื่อพ่อวัว : {dad}</h1>
-      <h1>สถานที่เลี้ยง : {placeborn}</h1>
-      <h1>ประวัติการเลี้ยง : {history}</h1>
-      <h1>สุขภาพวัว : {health}</h1>
-      <h1>วันเวลาที่รีดนมวัว : {date}</h1>
-      <h1>คนรีดนม : {human}</h1>
-      <h1>สถานที่ผลิต : {placefeed}</h1>
-      <h1>จำนวนผลิต๓ัณฑ์ : {volume}</h1>
+    <div className="container farm-theme">
+      <h1 className="mt-5 mb-4">รายละเอียด น้องวัว</h1>
+      <div className="row">
+        <div className="col-md-6">
+          <h5>ชื่อวัว: {name}</h5>
+          <h5>สายพันธุ์: {specie}</h5>
+          <h5>อายุ: {age}</h5>
+          <h5>น้ำหนัก: {weight}</h5>
+          <h5>ชื่อแม่วัว: {mon}</h5>
+          <h5>ชื่อพ่อวัว: {dad}</h5>
+        </div>
+        <div className="col-md-6">
+          <h5>สถานที่เลี้ยง: {placeborn}</h5>
+          <h5>ประวัติการเลี้ยง: {history}</h5>
+          <h5>สุขภาพวัว: {health}</h5>
+          <h5>วันเวลาที่รีดนมวัว: {date}</h5>
+          <h5>คนรีดนม: {human}</h5>
+          <h5>สถานที่ผลิต: {placefeed}</h5>
+          <h5>จำนวนผลิตภัณฑ์: {volume}</h5>
+        </div>
+      </div>
     </div>
   );
 }
