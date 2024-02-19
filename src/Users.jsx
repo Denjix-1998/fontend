@@ -23,7 +23,7 @@ export default function Users() {
   };
   return (
     <div>
-      <h1>ระบบจัดการวัว</h1>
+      <h1>ระบบจัดการน้องวัว</h1>
       <Link
         to="/create"
         className="btn btn-primary btn-add"

@@ -45,7 +45,7 @@ function CreateUser() {
 
   return (
     <div className="container farm-theme">
-      <h1 className="mt-5 mb-4">Add User</h1>
+      <h1 className="mt-5 mb-4">เพิ่มข้อมูลน้องวัว</h1>
       <form onSubmit={handleSubmit}>
         <div className="row">
           <div className="col-md-6">

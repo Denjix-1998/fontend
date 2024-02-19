@@ -69,7 +69,7 @@ export default function UpdateUser() {
 
   return (
     <div className="container farm-theme">
-      <h1 className="mt-5 mb-4">Update User</h1>
+      <h1 className="mt-5 mb-4">แก้ไขข้อมูลน้องวัว</h1>
       <form onSubmit={Update}>
         <div className="row">
           <div className="col-md-6">
