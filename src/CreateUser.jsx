@@ -134,7 +134,7 @@ function CreateUser() {
                 type="text"
                 className="form-control"
                 id="volume"
-                placeholder="กรอกจำนวนที่ซื้อ"
+                placeholder="จำนวนผลิตภัณฑ์"
                 value={volume}
                 onChange={(e) => setVolume(e.target.value)}
               />
