@@ -1,0 +1,58 @@
+/* Users.css */
+
+/* Minimal-themed background */
+body {
+  background-color: #f8f9fa; /* Light grayish-blue background */
+}
+
+/* Styles for the table */
+.table {
+  background-color: #fff; /* White background for the table */
+  padding: 15px; /* Add padding to the table */
+  border-radius: 10px; /* Add border radius to the table */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add subtle box shadow */
+}
+
+/* Styles for table headings */
+.table th {
+  background-color: #f2f2f2; /* Light gray background for table headings */
+  color: #333; /* Dark gray text color */
+  padding: 10px; /* Add padding to table headings */
+}
+
+/* Styles for table cells */
+.table td {
+  padding: 10px; /* Add padding to table cells */
+}
+
+/* Styles for buttons */
+.btn {
+  /* Light blue color for buttons */
+  color: #fff; /* White text color */
+  border: none; /* Remove button borders */
+  padding: 10px 20px; /* Add padding to buttons */
+  border-radius: 5px; /* Add border radius to buttons */
+  margin-right: 10px; /* Add margin between buttons */
+}
+
+.btn:last-child {
+  margin-right: 0; /* Remove margin from the last button */
+}
+
+.btn:hover {
+  background-color: #708090; /* Darker blue color on hover */
+}
+.btn-add {
+  padding: 10px 30px;
+  margin-bottom: 12px; /* Increase padding to increase button size */
+}
+/* Responsive styles for mobile devices */
+@media (max-width: 768px) {
+  .table {
+    padding: 10px; /* Decrease padding for smaller screens */
+  }
+
+  .btn {
+    padding: 8px 16px; /* Decrease button padding for smaller screens */
+  }
+}

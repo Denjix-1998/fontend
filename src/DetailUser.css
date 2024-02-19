@@ -21,8 +21,7 @@ h1 {
 }
 
 .col-md-6 {
-  padding: 10px;
-  flex: 0 0 50%; /* Each column takes up 50% of the row's width */
+  flex: 0 0 100%; /* Each column takes up 100% of the row's width on smaller screens */
 }
 
 h5 {
@@ -34,13 +33,5 @@ h5 {
 @media (max-width: 768px) {
   .col-md-6 {
     flex: 0 0 100%; /* Each column takes up 100% of the row's width on smaller screens */
-  }
-
-  h1 {
-    font-size: 1.5rem; /* Decrease font size for h1 */
-  }
-
-  h5 {
-    font-size: 0.9rem; /* Decrease font size for h5 */
   }
 }
